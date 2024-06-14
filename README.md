@@ -2,7 +2,6 @@
 
 Python implementation of the Caesar cipher generated while following along with the Practical Cryptography in Python book by Seth Nielson and Christopher K. Monson.
 
-
 ## Shift Substitution
 
 The shift_substitution function generates a Caesar cipher encoding and decoding dictionary based on a given character shift value.
@@ -21,10 +20,10 @@ shift (int): The character shift value to be applied for encoding and decoding.
 
 #### Outputs
 
-A tuple containing two dictionaries: encoding and decoding, containing the mappings for encoding and decoding Caesar cipher respectively.
+Two dictionaries: encoding and decoding, containing the mappings for encoding and decoding Caesar cipher respectively.
 
-* Encoding (dict): A dictionary mapping each letter of the alphabet to its substituted letter based on the provided character shift.
-* Decoding (dict): A dictionary mapping each substituted letter back to its original letter.
+* encoding (dict): A dictionary mapping each letter of the alphabet to its substituted letter based on the provided character shift.
+* decoding (dict): A dictionary mapping each substituted letter back to its original letter.
 
 #### Usage Example
 
@@ -134,3 +133,66 @@ A formatted string showing the alphabet and cipher mappings based on the input s
 `alphabet: ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
 `cipher: YZABCDEFGHIJKLMNOPQRSTUVWX`
+
+## Main
+
+The main section of the program implements a Caesar Cipher encoder and decoder providing a menu-driven interface for the user to interact with the encoding and decoding functionalities.
+
+#### Inputs
+
+* User's choice selected from the menu options.
+* Message input for encoding or decoding.
+* New character shift value if the user chooses to change it.
+
+#### Flow
+
+* Initialize a default shift value of 1 as the user's response and generate initial encoding and decoding dictionaries using shift_substitution.
+* Displays a menu with options to print encoding/decoding tables, encode a message, decode a message, change character shift, or exit
+* Based on the user's choice:
+
+  * Print the encoding and decoding dictionary tables.
+  * Encode a user-input message using the current encoding rules.
+  * Decode a user-input message using the current decoding rules.
+  * Allow the user to input a new character shift value and update the encoding and decoding rules accordingly.
+  * Exit the program.
+* Repeat the menu display and user interaction until the user chooses to exit.
+
+#### Usage Example & Outputs
+
+**Select an option >> 1**
+
+Display the current encoding and decoding tables with the default shift value of 1.
+
+`Encoding Table:`
+`Alphabet: ABCDEFGHIJKLMNOPQRSTUVWXYZ`
+`Cipher: BCDEFGHIJKLMNOPQRSTUVWXYZA`
+
+`Decoding Table:`
+`Alphabet: BCDEFGHIJKLMNOPQRSTUVWXYZA`
+`Cipher: ABCDEFGHIJKLMNOPQRSTUVWXYZ`
+
+**Select an option >> 2**
+
+Encoded a message based on user input.
+
+`Message to encode: Hello`
+`Encoded Message: IFMMP`
+
+**Select an option >> 3**
+
+Decoded a message based on user input.
+
+`Message to decode: IFMMP`
+`Decoded Message: HELLO`
+
+**Select an option >> 4**
+
+Allow the user to input a new character shift value and update the encoding and decoding accordingly. Display a warning message if an invalid character shift value is entered.
+
+`Input new character shift (currently set to (1)): 3`
+
+**Select an option >> 5**
+
+Display an exit message when the user chooses to exit the program.
+
+`Exiting program...`
