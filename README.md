@@ -2,16 +2,39 @@
 
 Python implementation of the Caesar cipher generated while following along with the Practical Cryptography in Python book by Seth Nielson and Christopher K. Monson.
 
-#### Parameters
 
-* Response (int): The character shift value to be applied for encoding and decoding.
+## Shift Substitution
 
-#### Returns
+The shift_substitution function generates a Caesar cipher encoding and decoding dictionary based on a given character shift value.
 
-A tuple containing two dictionaries - Encoding and Decoding.
+#### Inputs
+
+shift (int): The character shift value to be applied for encoding and decoding.
+
+#### Flow
+
+* Initialize the empty dictionaries: encoding and decoding.
+* Calculate the length of the uppercase alphabet.
+* Iterate over each letter in the uppercase alphabet.
+* Create a substitution pair by shifting the letter by the response value.
+* Populate the encoding and decoding dictionaries with the letter and its corresponding shifted letter.
+
+#### Outputs
+
+A tuple containing two dictionaries: encoding and decoding, containing the mappings for encoding and decoding Caesar cipher respectively.
 
 * Encoding (dict): A dictionary mapping each letter of the alphabet to its substituted letter based on the provided character shift.
 * Decoding (dict): A dictionary mapping each substituted letter back to its original letter.
+
+#### Usage Example
+
+`shift = 3`
+
+`encoding, decoding = shift_substitution(response)`
+
+`print(encoding) == {'A': 'D','B': 'E','C': 'F'}`
+
+`print(decoding) ==  {'D': 'A','E': 'B','F': 'C'}`
 
 ## Encoding
 
@@ -20,6 +43,7 @@ The encode function takes a message and a substitution dictionary as inputs, and
 #### Inputs
 
 message: a string representing the message to be encoded.
+
 substitution: a dictionary containing the mapping of characters to their substituted values.
 
 #### Flow
@@ -44,9 +68,7 @@ A string representing the encoded message based on the substitution mapping prov
 
 `encoded_message = encode(message, substitution)`
 
-`print(encoded_message)`
-
-`Output: "TFDSFU"`
+`print(encoded_message) == "TFDSFU"`
 
 ## Decoding
 
@@ -78,13 +100,11 @@ The output of the decode function is the decoded message obtained by applying th
 
 `dencoded_message = dencode(message, substitution)`
 
-`print(dencoded_message)`
-
-`Output: "SECRET"`
+`print(dencoded_message) == "SECRET"`
 
 ## Print Table
 
-The print_table function generates and returns a formatted string representing the full alphabet and its corresponding cipher based on the programs current shift value.
+The print_table function generates and returns a formatted string representing the full alphabet and its corresponding cipher based on the programs currently provided shift value.
 
 #### Inputs
 
@@ -99,7 +119,7 @@ substitution: A dictionary containing the mapping between alphabet letters and t
 
 #### Outputs
 
-A formatted string showing the alphabet and cipher mappings based on the input substitution dictionary and its shift value.
+A formatted string showing the alphabet and cipher mappings based on the input substitution dictionary and its current shift value.
 
 #### Usage Example
 
@@ -109,9 +129,7 @@ A formatted string showing the alphabet and cipher mappings based on the input s
 
 `cipher =  {'Y','Z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X'}`
 
-`print(print_table(substitution))`
-
-`output: Decoding Table:`
+`print(print_table(substitution)) == Decoding Table:`
 
 `alphabet: ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
