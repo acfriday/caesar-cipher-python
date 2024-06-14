@@ -29,7 +29,7 @@ Two dictionaries: encoding and decoding, containing the mappings for encoding an
 
 `shift = 3`
 
-`encoding, decoding = shift_substitution(response)`
+`encoding, decoding = shift_substitution(min_shift)`
 
 `print(encoding) == {'A': 'D','B': 'E','C': 'F'}`
 
