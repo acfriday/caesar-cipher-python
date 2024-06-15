@@ -1,6 +1,6 @@
 # Caesar Cipher
 
-Python implementation of the Caesar cipher generated while following along with the Practical Cryptography in Python book by Seth Nielson and Christopher K. Monson.
+Python implementation of the Caesar cipher crafted while following along with the Practical Cryptography in Python book by Seth Nielson and Christopher K. Monson.
 
 ## Shift Substitution
 
@@ -111,10 +111,6 @@ substitution: A dictionary containing the mapping between alphabet letters and t
 #### Outputs
 
 A formatted string showing the alphabet and cipher mappings based on the input substitution dictionary and its current shift value.
-
-#### Usage Example
-
-![image](https://github.com/acfriday/caesar-cipher-python/assets/82184168/195b72cc-b7cd-4304-b2ac-16c1af4180c4)
 
 ## Main
 
