@@ -71,6 +71,7 @@ def decode(message: str, reverse_substitution: Dict[str, str]) -> str:
 #### Inputs
 
 message: a string representing the message to be decoded.
+
 substitution: a dictionary containing the mapping for decoding the message.
 
 #### Flow
@@ -108,10 +109,6 @@ substitution: A dictionary containing the mapping between alphabet letters and t
 * Generate a string representing the cipher by concatenating the values of the sorted dictionary items.
 * Return a formatted string showing the alphabet and cipher mappings based on the current shift value.
 
-#### Outputs
-
-A formatted string showing the alphabet and cipher mappings based on the input substitution dictionary and its current shift value.
-
 ## Main
 
 The main section of the program implements a Caesar Cipher encoder and decoder providing a menu-driven interface for the user to interact with the encoding and decoding functionalities.
@@ -134,6 +131,8 @@ def main():
             print("Invalid input. Please enter a valid option from the menu.")
             continue
 ```
+
+![image](https://github.com/acfriday/caesar-cipher-python/assets/82184168/4f72f003-7f07-4bc0-bed0-718e72ab4a21)
 
 #### Inputs
 
